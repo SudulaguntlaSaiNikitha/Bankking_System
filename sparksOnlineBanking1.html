@@ -1,0 +1,68 @@
+<html lang="en">
+<head><title>Transaction via Online Banking</title>
+<meta charset="utf-8">;
+<meta name="viewport" content="width=device-width intial-scale=1.0">
+<script>
+function valid(){
+var x=document.getElementById("pin").value;
+var r=/^[0-9]{4}$/;
+if(x.match(r)){
+document.getElementById("a").innerHTML="";
+}
+else{
+document.getElementById("a").innerHTML="invalid pin";
+}
+}
+function func(){
+var mail=document.getElementById("email").value
+if(mail=="gayathri@gmail.com" || mail=="sasi@gmail.com" || mail=="roja@gmail.com"){
+if(parseInt(document.getElementById("amount").value)>50000){
+alert("Transaction Cancelled as the Balance is insufficient")
+}
+else{
+alert("Transaction Successful")
+}
+}
+else if(mail=="gangothri@gmail.com" || mail=="hema@gmail.com" || mail=="nikitha@gmail.com" || mail=="sushma@gmail.com"){
+if(parseInt(document.getElementById("amount").value)>70000){
+alert("Transaction Cancelled as the Balance is insufficient")
+}
+else{
+alert("Transaction Successful")
+}
+}
+else{
+alert("Invalid Credentials")
+}
+}
+</script>
+<style>
+.form{
+background-color:teal;
+width:450;
+border-radius:10px;
+}
+body{
+background-image:url("customers.jpg");
+background-position:center;
+background-size:100%100%;
+background-repeat:no-repeat;
+}
+</style>
+</head>
+<body>
+<center>
+<h2 style="color:white">Please Enter the following Details to Process the Amount</h2><br>
+<form class="form">
+<table cellpadding="7" cellspacing="2">
+<tr><td><b style="font-size:20">From</b><br><br><input type="email" id="email" style="width:400;height:40;" placeholder="sender@domain.com" required></td></tr>
+<tr><td><b style="font-size:20">To</b><br><br><input type="email" style="width:400;height:40;" placeholder="reciever@domain.com" required></td></tr>
+<tr><td><b style="font-size:20">Amount</b><br><br><input type="text" id="amount" style="width:400;height:40;" placeholder="enter amount" required></td></tr></td></tr>
+<tr><td><b style="font-size:20">PIN</b><br><br><input type="password" style="width:400;height:40;" placeholder="4-digit pin" id="pin" onfocusout="valid()" required><span id="a"></span>
+</td></tr>
+<tr><td><input type="submit" value="Pay Now" style="width:400;height:40;color:white;background-color:green;border-radius:8px;border:none;font-size:18px" onclick="func()"></td></tr>
+</table>
+</form>
+</center>
+</body>
+</html>
